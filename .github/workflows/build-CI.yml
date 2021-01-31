@@ -26,9 +26,6 @@ jobs:
           sudo -E apt-get -qq clean
           sudo timedatectl set-timezone $TZ
 
-      - name: SSH connection to Actions
-        uses: P3TERX/debugger-action@master
-      
       - name: Clone kenzok8's openwrt
         run: |
           git clone https://github.com/openwrt/openwrt lede
@@ -38,7 +35,11 @@ jobs:
           git clone https://github.com/tty228/luci-app-serverchan.git packages/
           git clone https://github.com/tuanqing/install-program package/install-program
 
-    - name: SSH connection to Actions
+
+      - name: SSH connection to Actions
+        uses: P3TERX/debugger-action@master
+      
+      - name: SSH connection to Actions
       uses: P3TERX/debugger-action@master
       - name: Install feeds & Make config
         env:
