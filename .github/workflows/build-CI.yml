@@ -39,8 +39,6 @@ jobs:
       - name: SSH connection to Actions
         uses: P3TERX/debugger-action@master
       
-      - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
       - name: Install feeds & Make config
         env:
           CONFIG: '.github/config'
