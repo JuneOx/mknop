@@ -27,7 +27,7 @@ jobs:
           sudo timedatectl set-timezone $TZ
 
       - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
+        uses: P3TERX/debugger-action@master
       
       - name: Clone kenzok8's openwrt
         run: |
