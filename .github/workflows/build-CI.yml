@@ -35,17 +35,15 @@ jobs:
           git clone https://github.com/tty228/luci-app-serverchan.git packages/
           git clone https://github.com/tuanqing/install-program package/install-program
 
-
-      - name: SSH connection to Actions
-        uses: P3TERX/debugger-action@master
-      
       - name: Install feeds & Make config
         env:
           CONFIG: '.github/config'
         run: |
           chmod +x $CONFIG
           ./$CONFIG
-
+      - name: SSH connection to Actions
+        uses: P3TERX/debugger-action@master
+      
       - name: Compile openwrt
         run: |
           cd lede
